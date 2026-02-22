@@ -39,9 +39,9 @@ export async function fetchPayments(): Promise<PaymentsResponse> {
 export interface CreatePaymentPayload {
     customer_name: string;
     paid_amount: number;
-    rounf_off_amount?: number;
-    payment_method: 'cash' | 'UPI' | 'cheque';
-    notes?: string;
+    rounf_off_amount: number;
+    payment_method: 'cash' | 'UPI' | 'cheque' | string;
+    notes: string;
 }
 
 export async function createPayment(payload: CreatePaymentPayload): Promise<void> {

@@ -139,9 +139,9 @@ export function AddPaymentScreen() {
             await createPayment({
                 customer_name: customerId,
                 paid_amount: parsedAmount,
-                rounf_off_amount: parsedRound,
+                rounf_off_amount: parsedRound !== undefined ? parsedRound : 0,
                 payment_method: paymentMethod,
-                notes: notes || undefined,
+                notes: notes ? notes.trim() : "",
             });
             await loadPayments(); // Refresh global list
             Alert.alert('Success', 'Payment recorded successfully!', [
