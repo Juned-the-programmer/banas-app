@@ -22,7 +22,7 @@ export interface Customer {
     initials: string;
     avatarUrl?: string;
     route: string;
-    milkType: string;
+    phone_no: string;
     isActive: boolean;
 }
 
@@ -105,7 +105,7 @@ export async function fetchCustomers(): Promise<Customer[]> {
         name: `${item.first_name} ${item.last_name}`,
         initials: `${item.first_name?.[0] || ''}${item.last_name?.[0] || ''}`.toUpperCase(),
         route: item.route,
-        milkType: '', // We don't get milkType in the listing right now
+        phone_no: item.phone_no || '',
         isActive: item.active,
     }));
 }

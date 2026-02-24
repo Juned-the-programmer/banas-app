@@ -74,10 +74,10 @@ export function CustomerCard({ customer, onPress, style }: CustomerCardProps) {
                     <ThemedText variant="caption" style={styles.metaText}>{customer.route}</ThemedText>
                 </ThemedView>
 
-                {/* Milk type */}
+                {/* Phone */}
                 <ThemedView style={styles.metaRow}>
-                    <Ionicons name="water-outline" size={13} color={COLORS.PRIMARY} />
-                    <ThemedText variant="caption" style={styles.milkText}>{customer.milkType}</ThemedText>
+                    <Ionicons name="call-outline" size={13} color={COLORS.PRIMARY} />
+                    <ThemedText variant="caption" style={styles.milkText}>{customer.phone_no}</ThemedText>
                 </ThemedView>
             </ThemedView>
 

@@ -61,7 +61,7 @@ export function LoginScreen() {
                             <Ionicons name="water" size={36} color={COLORS.PRIMARY} />
                         </ThemedView>
                         <ThemedText style={styles.appName}>Banas</ThemedText>
-                        <ThemedText style={styles.tagline}>Milk Delivery Management</ThemedText>
+                        <ThemedText style={styles.tagline}>Water Delivery Management</ThemedText>
                     </ThemedView>
 
                     {/* ── Card ── */}

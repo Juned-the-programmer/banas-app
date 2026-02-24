@@ -105,7 +105,7 @@ export function CustomerDetailScreen() {
 
                     <View style={[styles.rateBadge, { marginTop: SPACING.XS }]}>
                         <ThemedText variant="caption" color={COLORS.PRIMARY} style={{ fontWeight: FONT_WEIGHT.BOLD }}>
-                            Rate: ₹{data.rate}/Litre
+                            Rate: ₹{data.rate}/Bottle
                         </ThemedText>
                     </View>
                 </ThemedView>
@@ -189,7 +189,7 @@ export function CustomerDetailScreen() {
 
                     <TouchableOpacity
                         style={styles.recordPaymentBtn}
-                        onPress={() => router.push({ pathname: '/add-payment', params: { customerId: data.id } } as any)}
+                        onPress={() => router.push({ pathname: '/finance/add-payment', params: { customerId: data.id } } as any)}
                     >
                         <Ionicons name="card" size={20} color={COLORS.TEXT_ON_PRIMARY} />
                         <ThemedText variant="label" color={COLORS.TEXT_ON_PRIMARY} style={{ marginLeft: 8 }}>

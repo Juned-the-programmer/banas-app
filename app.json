@@ -11,6 +11,11 @@
     "ios": {
       "supportsTablet": true
     },
+    "extra": {
+      "eas": {
+        "projectId": "171f1650-f68a-4941-b1c0-0cca8e41e279"
+      }
+    },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
@@ -19,7 +24,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.juned_davada.banas"
     },
     "web": {
       "output": "static",

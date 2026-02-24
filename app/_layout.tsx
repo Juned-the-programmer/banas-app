@@ -31,11 +31,11 @@ export default function RootLayout() {
                 <Stack.Screen name="auth/login" />
                 <Stack.Screen name="(tabs)" />
                 <Stack.Screen
-                    name="add-customer"
+                    name="customers/add-customer"
                     options={{ presentation: 'modal', headerShown: false }}
                 />
                 <Stack.Screen
-                    name="add-daily-entry"
+                    name="operations/add-daily-entry"
                     options={{ presentation: 'modal', headerShown: false }}
                 />
             </Stack>

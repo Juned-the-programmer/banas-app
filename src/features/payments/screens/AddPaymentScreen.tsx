@@ -524,7 +524,7 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         backgroundColor: '#FFFFFF', borderRadius: RADIUS.LG, padding: SPACING.LG,
-        maxHeight: '80%', shadowColor: '#000', shadowOffset: { width: 0, height: 4 },
+        maxHeight: '90%', shadowColor: '#000', shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.18, shadowRadius: 12, elevation: 10,
     },
     modalDivider: { height: 1, backgroundColor: COLORS.BORDER, marginBottom: SPACING.XS },
