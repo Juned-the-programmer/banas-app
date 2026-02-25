@@ -3,6 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type TabIconProps = { name: keyof typeof Ionicons.glyphMap; color: string };
 
@@ -11,6 +12,12 @@ function TabIcon({ name, color }: TabIconProps) {
 }
 
 export default function TabLayout() {
+    const insets = useSafeAreaInsets();
+
+    // Calculate dynamic bottom padding. Fallback to 8 if no inset is present on Android.
+    const bottomPadding = Platform.OS === 'ios' ? 24 : Math.max(8, insets.bottom + 4);
+    const tabHeight = Platform.OS === 'ios' ? 84 : 60 + bottomPadding;
+
     return (
         <Tabs
             screenOptions={{
@@ -21,8 +28,8 @@ export default function TabLayout() {
                     backgroundColor: COLORS.CARD,
                     borderTopColor: COLORS.BORDER,
                     borderTopWidth: 1,
-                    height: Platform.OS === 'ios' ? 84 : 64,
-                    paddingBottom: Platform.OS === 'ios' ? 24 : 8,
+                    height: tabHeight,
+                    paddingBottom: bottomPadding,
                     paddingTop: 8,
                     elevation: 8,
                     shadowColor: '#000',
