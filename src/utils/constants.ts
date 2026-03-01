@@ -5,7 +5,7 @@
  */
 
 // ─── Environment ────────────────────────────────────────────────────────────
-export const BASE_URL = 'https://banas-api.onrender.com/api';
+export const BASE_URL = 'https://banas-api-edt9.onrender.com/api';
 
 // ─── API Endpoints ───────────────────────────────────────────────────────────
 export const ENDPOINTS = {
