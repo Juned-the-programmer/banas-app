@@ -16,6 +16,7 @@ interface EditCustomerState {
     email: string;
     sequenceNo: string;
     isActive: boolean;
+    openingBalance: string;
 
     // UI state
     errors: Record<string, string>;
@@ -39,6 +40,7 @@ export const useEditCustomerStore = create<EditCustomerState>((set, get) => ({
     email: '',
     sequenceNo: '',
     isActive: true,
+    openingBalance: '',
 
     errors: {},
     loading: false,
@@ -55,6 +57,7 @@ export const useEditCustomerStore = create<EditCustomerState>((set, get) => ({
             email: /* backend doesn't seem to return email in detail, but we can clear it */ '',
             sequenceNo: customer.sequence_no ? String(customer.sequence_no) : '',
             isActive: customer.active !== undefined ? customer.active : true,
+            openingBalance: '',
             errors: {},
             submitError: null,
             loading: false,
@@ -102,6 +105,7 @@ export const useEditCustomerStore = create<EditCustomerState>((set, get) => ({
                 email: state.email.trim() || undefined,
                 sequence_no: state.sequenceNo ? Number(state.sequenceNo) : null,
                 active: state.isActive,
+                opening_balance: state.openingBalance ? Number(state.openingBalance) : undefined,
             });
 
             set({ loading: false });
@@ -126,6 +130,7 @@ export const useEditCustomerStore = create<EditCustomerState>((set, get) => ({
             email: '',
             sequenceNo: '',
             isActive: true,
+            openingBalance: '',
             errors: {},
             submitError: null,
             loading: false,

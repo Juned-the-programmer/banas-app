@@ -34,6 +34,7 @@ export interface CreateCustomerPayload {
     phone_no: number;
     email?: string;
     sequence_no?: number | null | string;
+    opening_balance?: number;
 }
 
 export interface UpdateCustomerPayload {
@@ -45,6 +46,7 @@ export interface UpdateCustomerPayload {
     rate: number;
     sequence_no?: number | null | string;
     active?: boolean;
+    opening_balance?: number;
 }
 
 export interface CustomerAccount {

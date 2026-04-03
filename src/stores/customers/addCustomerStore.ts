@@ -26,6 +26,7 @@ interface AddCustomerState {
     phone: string;
     email: string;
     sequenceNo: string;
+    openingBalance: string;
 
     // UI state
     loading: boolean;
@@ -47,6 +48,7 @@ const INITIAL_STATE = {
     phone: '',
     email: '',
     sequenceNo: '',
+    openingBalance: '',
     loading: false,
     errors: {},
     submitError: null,
@@ -89,7 +91,7 @@ export const useAddCustomerStore = create<AddCustomerState>((set, get) => ({
     },
 
     submit: async () => {
-        const { validate, firstName, lastName, routeId, rate, phone, email, sequenceNo } = get();
+        const { validate, firstName, lastName, routeId, rate, phone, email, sequenceNo, openingBalance } = get();
 
         if (!validate()) return false;
 
@@ -103,6 +105,7 @@ export const useAddCustomerStore = create<AddCustomerState>((set, get) => ({
                 phone_no: Number(phone),
                 email: email.trim(),
                 sequence_no: sequenceNo.trim() ? Number(sequenceNo) : "",
+                opening_balance: openingBalance.trim() ? Number(openingBalance) : 0,
             };
             console.log(payload);
             await createCustomer(payload);

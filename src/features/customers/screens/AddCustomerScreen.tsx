@@ -27,7 +27,7 @@ import { FormField } from '../components/FormField';
 
 export function AddCustomerScreen() {
     const {
-        firstName, lastName, routeId, rate, phone, email, sequenceNo,
+        firstName, lastName, routeId, rate, phone, email, sequenceNo, openingBalance,
         errors, loading, submitError,
         setField, submit, reset,
     } = useAddCustomerStore();
@@ -40,6 +40,7 @@ export function AddCustomerScreen() {
     const rateRef = useRef<TextInput>(null);
     const emailRef = useRef<TextInput>(null);
     const seqRef = useRef<TextInput>(null);
+    const openingBalanceRef = useRef<TextInput>(null);
 
     const selectedRouteName =
         routes.find((r) => r.id === routeId)?.route_name ?? '';
@@ -199,9 +200,20 @@ export function AddCustomerScreen() {
                         value={sequenceNo}
                         onChangeText={(v) => setField('sequenceNo', v)}
                         keyboardType="numeric"
+                        returnKeyType="next"
+                        onSubmitEditing={() => openingBalanceRef.current?.focus()}
+                        hint="Delivery order position on this route"
+                    />
+                    <FormField
+                        ref={openingBalanceRef}
+                        label="Opening Balance (₹)"
+                        placeholder="e.g. 500"
+                        value={openingBalance}
+                        onChangeText={(v) => setField('openingBalance', v)}
+                        keyboardType="numeric"
                         returnKeyType="done"
                         onSubmitEditing={handleSubmit}
-                        hint="Delivery order position on this route"
+                        hint="Initial due balance for this customer"
                     />
                 </ThemedView>
 

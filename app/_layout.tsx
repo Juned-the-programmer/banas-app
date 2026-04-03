@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import 'react-native-reanimated';
+import { setOnAuthFailure } from '@/src/api/axiosClient';
 
 export default function RootLayout() {
     const colorScheme = useColorScheme();
@@ -13,6 +14,11 @@ export default function RootLayout() {
     // Check SecureStore on first mount — restores session
     useEffect(() => {
         initialise();
+
+        // Handle global auth failures from API (401s or missing tokens)
+        setOnAuthFailure(() => {
+            useAuthStore.getState().logout();
+        });
     }, [initialise]);
 
     // Once initialised, redirect to login or tabs
